@@ -58,37 +58,54 @@ var changeToNumber = function (theString){
 		result = parseInt(numInteger, 10);
 		return theString + " is now, " + result;
 }
+//Find the Smallest value in an array that is greater than a given number.
+
+var smllValue = function (theArray, input){
+	var lgNum = [],
+		smllNum;
+	for (i = 0; i < theArray.length; i++){
+		if (theArray[i] > input) {
+			lgNum.push(theArray[i]);
+		}
+	}
+	
+	smllNum = lgNum[0];
+	
+	for (j = 0; j < lgNum.length; j++){
+		if (smllNum > lgNum[j]) {
+			smllNum = lgNum[j];
+			
+		}
+	}return "If given the number " + input + " the next number grater in the array " + theArray + " is " + smllNum;
+	
+}
+
+
 	return {
 		"isUrl": 			isUrl,
 		"checkTheNumber":	checkTheNumber,
 		"specificNumDec":	specificNumDec,
-		"changeToNumber":  	changeToNumber 
+		"changeToNumber":  	changeToNumber, 
+		"smllValue":		smllValue 
 }
 
 };
+
 //Calling the functions in my library from above.
 var newLib = new myLibrary();
 var url = "www.mytestpage.com";
 var myPhoneNumber = "555-555-5555";
 var theNumber = 2.3457;
 var theString = "050";
+var theArray = [5,9,10,13,15,18,20];
+var input = 12;
+
 console.log("The entry is " + newLib.isUrl(url) + " URL");
 console.log("It is " + newLib.checkTheNumber(myPhoneNumber));
 console.log('pedro j rodriguez'.toProperCase());
 console.log(newLib.specificNumDec(theNumber));
 console.log(newLib.changeToNumber(theString));
-/*console.log("Is this is number? " + newLib.checkNumeric(156));
-console.log("is this Lee? " + newlib.areyoulee("Lee"));
-console.log("The dash is in position " + newLib.checkstring("123-456"));
-*/
-
-
-
-//stub function call
-/*var pbj = makeSandwich("white", "peanut butter", ["grape jelly"]);
-// pbj is an object that will eventually do something useful
-*/
-
+console.log(newLib.smllValue(theArray,12));
 
 
 

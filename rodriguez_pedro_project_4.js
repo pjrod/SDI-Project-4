@@ -45,64 +45,17 @@ String.prototype.toProperCase = function() {
   }
    return changed.join(' ')
 };
+//Format a number to use a specific number of decimal places, as for money.
+var specificNumDec = function(theNumber) {
+	var newNumber = theNumber,
+		newNumber = theNumber.toFixed(2);
+		return theNumber + " is now, " + newNumber;
+}
 
-
-
-/*	
-	// check Numeric Function
-	var checkNumeric = function(val){
-	
-		if(isNaN(val)){
-			return false;
-			
-		} else	{
-			return true;
-		}
-	};
-	
-	// Name Function
-	var areYouLee = function(val){
-		if (val === "Lee"){
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	// Check Pattern Funciton
-	var checkString = function(val){
-	
-		var strLen = val.length;
-		for (vari i=0; 1 <= strLen; i++) {
-			 if (val.substring(i, i+1) === "-"){
-				 return i;
-			 }
-			 
-		}
-	};
-	
 	return {
-		"checkNumeric": checkNumeric,
-		"areYouLee": 	areYoulee, 
-		"checkString": 	checkString 
-	}
-
-
-
-//stub function 
-
-/*var makeSandwich = function (bread, meat, toppings) {
-    // TODO: Fill in working code here that builds a sandwich
-    return { };
-}*/
-
-
-
-return {
-	"isUrl": 			isUrl,
-	"checkTheNumber":	checkTheNumber,
-	//"changeCase":		changeCase
-
+		"isUrl": 			isUrl,
+		"checkTheNumber":	checkTheNumber,
+		"specificNumDec":	specificNumDec
 }
 
 };
@@ -110,13 +63,11 @@ return {
 var newLib = new myLibrary();
 var url = "www.mytestpage.com";
 var myPhoneNumber = "555-555-5555";
+var theNumber = 2.3457;
 console.log("The entry is " + newLib.isUrl(url) + " URL");
 console.log("It is " + newLib.checkTheNumber(myPhoneNumber));
 console.log('pedro j rodriguez'.toProperCase());
-
-
-
-
+console.log(newLib.specificNumDec(theNumber));
 
 /*console.log("Is this is number? " + newLib.checkNumeric(156));
 console.log("is this Lee? " + newlib.areyoulee("Lee"));

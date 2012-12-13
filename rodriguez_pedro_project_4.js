@@ -34,6 +34,19 @@ var checkTheNumber = function(phoneNum){
 	}
 };
 
+//Title-case a string (split into words, then uppercase the first letter of each word)
+
+String.prototype.toProperCase = function() {
+  var stringInput = this.split(' ');
+  var changed = [];
+  for (var i=0; i < stringInput.length; i++) {
+      var letter = stringInput[i].charAt(0).toUpperCase();
+      changed.push(letter + stringInput[i].slice(1));
+  }
+   return changed.join(' ')
+};
+
+
 
 /*	
 	// check Numeric Function
@@ -87,7 +100,9 @@ var checkTheNumber = function(phoneNum){
 
 return {
 	"isUrl": 			isUrl,
-	"checkTheNumber":	checkTheNumber 
+	"checkTheNumber":	checkTheNumber,
+	//"changeCase":		changeCase
+
 }
 
 };
@@ -95,10 +110,9 @@ return {
 var newLib = new myLibrary();
 var url = "www.mytestpage.com";
 var myPhoneNumber = "555-555-5555";
-
 console.log("The entry is " + newLib.isUrl(url) + " URL");
 console.log("It is " + newLib.checkTheNumber(myPhoneNumber));
-
+console.log('pedro j rodriguez'.toProperCase());
 
 
 

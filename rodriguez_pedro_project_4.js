@@ -52,10 +52,17 @@ var specificNumDec = function(theNumber) {
 		return theNumber + " is now, " + newNumber;
 }
 
+//Given a String Number such as a "42", return value as a number such as 42.
+var changeToNumber = function (theString){
+	var numInteger = theString,
+		result = parseInt(numInteger, 10);
+		return theString + " is now, " + result;
+}
 	return {
 		"isUrl": 			isUrl,
 		"checkTheNumber":	checkTheNumber,
-		"specificNumDec":	specificNumDec
+		"specificNumDec":	specificNumDec,
+		"changeToNumber":  	changeToNumber 
 }
 
 };
@@ -64,11 +71,12 @@ var newLib = new myLibrary();
 var url = "www.mytestpage.com";
 var myPhoneNumber = "555-555-5555";
 var theNumber = 2.3457;
+var theString = "050";
 console.log("The entry is " + newLib.isUrl(url) + " URL");
 console.log("It is " + newLib.checkTheNumber(myPhoneNumber));
 console.log('pedro j rodriguez'.toProperCase());
 console.log(newLib.specificNumDec(theNumber));
-
+console.log(newLib.changeToNumber(theString));
 /*console.log("Is this is number? " + newLib.checkNumeric(156));
 console.log("is this Lee? " + newlib.areyoulee("Lee"));
 console.log("The dash is in position " + newLib.checkstring("123-456"));

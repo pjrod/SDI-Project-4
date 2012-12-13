@@ -20,6 +20,21 @@ var myLibrary = function(){
 		
 	};
 		
+//Does a string follow a pattern like a phone number (123-456-7890)
+var checkTheNumber = function(phoneNum){
+	var theNumber = phoneNum,
+		theRegExp = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/,
+		numCheck;
+		
+		numCheck = theRegExp.test(theNumber);
+	if (numCheck) {
+		return true + " that, " + theNumber + " is a valid number."
+	} else {
+		return false + " that, " + theNumber + " is a valid number."
+	}
+};
+
+
 /*	
 	// check Numeric Function
 	var checkNumeric = function(val){
@@ -71,15 +86,23 @@ var myLibrary = function(){
 
 
 return {
-	"isUrl": isUrl 
+	"isUrl": 			isUrl,
+	"checkTheNumber":	checkTheNumber 
 }
 
 };
-//funciton call based un library up above
-var url = "www.mytestpage.com";
+//Calling the functions in my library from above.
 var newLib = new myLibrary();
+var url = "www.mytestpage.com";
+var myPhoneNumber = "555-555-5555";
 
 console.log("The entry is " + newLib.isUrl(url) + " URL");
+console.log("It is " + newLib.checkTheNumber(myPhoneNumber));
+
+
+
+
+
 
 /*console.log("Is this is number? " + newLib.checkNumeric(156));
 console.log("is this Lee? " + newlib.areyoulee("Lee"));

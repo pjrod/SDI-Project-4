@@ -1,4 +1,3 @@
-//alert("JavaScript works!");
 //Pedro J Rodriguez
 //SDI 1212
 //Project 4
@@ -71,9 +70,9 @@ var smllValue = function (theArray, input){
 	
 	smllNum = lgNum[0];
 	
-	for (j = 0; j < lgNum.length; j++){
-		if (smllNum > lgNum[j]) {
-			smllNum = lgNum[j];
+	for (n = 0; n < lgNum.length; n++){
+		if (smllNum > lgNum[n]) {
+			smllNum = lgNum[n];
 			
 		}
 	}return "If given the number " + input + " the next number grater in the array " + theArray + " is " + smllNum;
@@ -92,6 +91,7 @@ var smllValue = function (theArray, input){
 };
 
 //Calling the functions in my library from above.
+
 var newLib = new myLibrary();
 var url = "www.mytestpage.com";
 var myPhoneNumber = "555-555-5555";
